@@ -1,22 +1,14 @@
 const express = require('express');
-
-const app = express();
-app.use(express.static('public'));
+const path = require('path');
 
 const PORT = process.env.PORT || 4000;
 
-app.listen(PORT, ()=>{
-    console.log('Servidor corriendo en http://localhost:${PORT}/');
-});
-
-app.get('/', (req,res)=>{
-    res.sendFile(__dirname + '/views/home.html');
-});
-
-app.get('/register', (req,res)=>{
-    res.sendFile(__dirname + '/views/register.html');
-});
-
-app.get('/login', (req,res)=>{
-    res.sendFile(__dirname + '/views/login.html');
-});
+const app = express();
+app
+    .use(express.static(path.join(__dirname, 'public')))
+    .set('views', path.join(__dirname, 'views'))
+    .set('view engine', 'ejs')
+    .get('/', (req, res) => res.render('pages/home'))
+    .get('/login', (req, res) => res.render('pages/login'))
+    .get('/register', (req, res) => res.render('pages/register'))
+    .listen(PORT, () => console.log(`Running on port ${PORT}`))
