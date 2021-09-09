@@ -1,3 +1,4 @@
+
 * {
     margin: 0px;
     padding: 0px;
@@ -19,25 +20,57 @@ p {
     font-size: 12px;
 }
 
+/******** HEADER start **********/
 header {
     background-color: #EAC926;
+    position: sticky;
+    top: 0
 }
 
-header div.top-header {
+header > div.top-header {
     align-items: center;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    padding: 20px;
-}
-
-header div.logo {
-    width: 50%;
     padding: 10px;
 }
 
+header > div.top-header > div.logo {
+    flex: 0 0 auto;
+}
+
+header div.logo img {
+    height: 35px;
+}
+
 header .form {
-    width: 50%;
+    display: inline-flex;
+    width: 55%;
+}
+
+header .form .input {
+    background-color: #FFF;
+    border: none;
+    border-radius: 2px;
+    color: #666;
+    height: 40px;
+    outline: none;
+    padding: 10px;
+    width: 80%;
+}
+
+header .button-submit {
+    background-color: #fff;
+    border: none;
+    border-left: 1px solid rgba(128, 128, 128, 0.2);
+    border-radius: 2px;
+    margin-left: -2px;
+    padding: 10px;
+}
+
+header .installments {
+    font-size: 16px;
+    margin: 0 auto;
 }
 
 header nav.main-navbar {
@@ -52,7 +85,9 @@ header nav.main-navbar ul {
 }
 
 header ul li {
+    font-size: 14px;
     list-style-type: none;
+    padding: 15px;
 }
 
 header ul li a {
@@ -60,45 +95,31 @@ header ul li a {
     color: #000;
 }
 
-header .form .input {
-    background-color: #FFF;
-    border: 1px solid #000;
-    outline: none;
-    color: #666;
-    padding: 2px;
-}
-
-header .form .submit {
-    background-color: #FFF;
-    border: 1px solid #000;
-    color: #666;
-    width: 8%;
-}
-
 header div.top-header p {
     width: 100%;
     text-align: center;
-    margin-top: 10px;
+    margin-top: 20px;
 }
 
-div.burger-menu {
+header div.burger-menu {
     text-align: center;
 }
 
-div.burger-menu i {
+header div.burger-menu i {
     background-color: #0044AA;
     border-radius: 5px;
     color: #FFF;
     font-size: 20px;
-    height: 40px;
-    margin: 10px 0px 20px 0px;
-    padding: 10px;
-    width: 40px;
+    margin: 15px 0;
+    padding: 5px 15px;
 }
+
+/******** HEADER end **********/
 
 section div.products {
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-between;
 }
 
 section div.products article {
@@ -107,11 +128,7 @@ section div.products article {
 
 .price {
     font-size: 18px;
-    width: 30%;
-}
-
-.discount {
-    width: 50%;
+    margin-right: 15px;
 }
 
 .discount,
@@ -201,6 +218,7 @@ button.login:hover {
 
 /* end login.html */
 
+/******* FOOTER start *******/
 footer .footer-row {
     display: flex;
     flex-wrap: wrap;
@@ -217,9 +235,28 @@ footer p#copyright {
     text-align: center;
 }
 
-@media (min-width: 361px){
+/****** FOOTER start *********/
+
+@media (min-width: 768px){
+    header div.top-header {
+        flex-wrap: nowrap;
+        padding: 20px 40px 10px;
+    }
+
+    header .form {
+        /* width: 60%; */
+        justify-content: center;
+    }
+
+    header div.top-header p {
+        margin: 0;
+        width: unset;
+    }
+
     header nav.main-navbar {
         display: flex;
+        padding-left: 40px;
+        padding-right: 40px;
     }
 
     div.burger-menu {
@@ -227,24 +264,18 @@ footer p#copyright {
     }
 
     section div.products article {
-        width: 50%;
+        width: 48%;
     }
-    
+
     main section article{
         box-shadow: 0px 0px 10px rgb(100, 100, 100);
     }
 }
 
-@media (min-width: 769px){
-
-    header div.logo,
-    header form.form,
-    header div.top-header p {
-        width: 33%;
-    }
+@media (min-width: 992px){
 
     section div.products article {
-        width: 25%;
+        width: 23%;
     }
 
     article:hover h4.description {
