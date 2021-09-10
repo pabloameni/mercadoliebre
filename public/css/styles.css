@@ -24,7 +24,8 @@ p {
 header {
     background-color: #EAC926;
     position: sticky;
-    top: 0
+    top: 0;
+    z-index: 1;
 }
 
 header > div.top-header {
