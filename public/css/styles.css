@@ -1,3 +1,11 @@
+:root {
+    --amarillo: #eac926;
+    --azul: #03264c;
+    --celeste: #1259c3;
+    --gris-oscuro: #666;
+    --gris-claro: #ebebeb;
+    --verde: #39b54a;
+}
 
 * {
     margin: 0px;
@@ -7,22 +15,27 @@
 
 body {
     font-family: 'Roboto', sans-serif;
-    background-color: #ebebeb;
+    background-color: var(--gris-claro);
     width: 100%;
     min-width: 330px;
 }
 
-h3 {
+h3.section-title {
     font-size: 24px;
+    margin: 20px 0px;
 }
 
 p {
     font-size: 12px;
 }
 
+.text-center {
+    text-align: center;
+}
+
 /******** HEADER start **********/
 header {
-    background-color: #EAC926;
+    background-color: var(--amarillo);
     position: sticky;
     top: 0;
     z-index: 1;
@@ -53,14 +66,14 @@ header .form .input {
     background-color: #FFF;
     border: none;
     border-radius: 2px;
-    color: #666;
+    color: var(--gris-oscuro);
     height: 40px;
     outline: none;
     padding: 10px;
     width: 80%;
 }
 
-header .button-submit {
+header .button-search {
     background-color: #fff;
     border: none;
     border-left: 1px solid rgba(128, 128, 128, 0.2);
@@ -124,6 +137,8 @@ section div.products {
 }
 
 section div.products article {
+    border-radius: 10px;
+    overflow: hidden;
     width: 100%;
 }
 
@@ -138,9 +153,9 @@ section div.products article {
     font-weight: normal;
 }
 
-h3,
+h3.section-title,
 .description {
-    color: #666;
+    color: var(--gris-oscuro);
 }
 
 .description {
@@ -152,8 +167,7 @@ section.banner img {
     width: 100%;
 }
 
-main,
-footer {
+main {
     width: 90%;
     margin: 0 auto;
 }
@@ -169,7 +183,7 @@ main section article img {
 
 main section article i,
 .discount{
-    color: #39b54a;
+    color: var(--verde);
 }
 
 main section article i {
@@ -178,7 +192,7 @@ main section article i {
     padding: 5px;
     width: 30px;
     height: 30px;
-    border: 1px solid #39b54a;
+    border: 1px solid var(--verde);
     background-color: #FFF;
     border-radius: 50%;
     position: absolute;
@@ -191,13 +205,9 @@ main section article i:hover {
     transform: rotate(-90deg);
 }
 
-main section h3{
-    margin: 20px 0px;
-}
-
 article div.main-article{
     width: 100%;
-    border-top: 1px solid #ebebeb;
+    border-top: 1px solid var(--gris-claro);
     padding: 15px;
     display: flex;
     flex-wrap: wrap;
@@ -220,20 +230,35 @@ button.login:hover {
 /* end login.html */
 
 /******* FOOTER start *******/
+footer {
+    background-color: gainsboro;
+    margin-top: 40px;
+    padding: 0 2%;
+}
+
 footer .footer-row {
     display: flex;
     flex-wrap: wrap;
+    padding: 20px 0px;
+}
+
+footer .footer-item {
+    margin: 30px 0px;
+    width: 100%;
 }
 
 footer .footer-item i {
     color: #5661ff;
-    font-size: 36px;
+    font-size: 2em;
+    margin-bottom: 10px;
     text-align: center;
     width: 100%;
 }
 
-footer p#copyright {
+footer .item-descrip {
+    display: block;
     text-align: center;
+    font-size: 16px;
 }
 
 /****** FOOTER start *********/
@@ -245,7 +270,6 @@ footer p#copyright {
     }
 
     header .form {
-        /* width: 60%; */
         justify-content: center;
     }
 
@@ -256,8 +280,8 @@ footer p#copyright {
 
     header nav.main-navbar {
         display: flex;
-        padding-left: 40px;
-        padding-right: 40px;
+        padding-left: 20px;
+        padding-right: 20px;
     }
 
     div.burger-menu {
@@ -286,5 +310,13 @@ footer p#copyright {
     .copy-header {
         max-width: 350px;
         text-align: right;
+    }
+
+    footer .footer-row {
+        flex-wrap: nowrap;
+    }
+
+    footer .item-descrip {
+        font-size: 15px;
     }
 }
