@@ -29,10 +29,49 @@ p {
     font-size: 12px;
 }
 
+.btn-primary {
+    background-color: var(--celeste);
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 18px;
+    padding: 10px;
+    transition: background-color 1s;
+}
+
+.btn-primary:hover {
+    background-color: #0022AA;
+}
+
+.btn-secondary {
+    background-color: #6c757d;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 18px;
+    padding: 10px;
+    transition: background-color 1s;
+}
+
+.btn-secondary:hover {
+    background-color: #5a6268;
+}
+
+.ml-10px {
+    margin-left: 10px;
+}
+
+.ml-25px {
+    margin-left: 25px;
+}
+
 .text-center {
     text-align: center;
 }
 
+.w-100 {
+    width: 100%;
+}
 /******** HEADER start **********/
 header {
     background-color: var(--amarillo);
@@ -215,7 +254,7 @@ article div.main-article{
 
 /* start login.html */
 
-main section.login {
+main > section.login {
     background-color: white;
     border-radius: 5px;
     margin: 50px auto;
@@ -223,37 +262,62 @@ main section.login {
     padding: 20px;
 }
 
-main section.login .input-row {
+main > section.login .input-row {
     padding-bottom: 20px;
 }
 
-main section.login input.input-text {
+main > section.login input.input-text {
     width: 100%;
 }
 
-main button.login {
-    background-color: var(--celeste);
-    border: none;
-    border-radius: 5px;
-    color: white;
-    font-size: 18px;
-    padding: 10px;
-    transition: background-color 1s;
-    width: 100%;
-}
 
-button.login:hover {
-    background-color: #0022AA;
-}
 
 /* end login.html */
 
 
 /******* REGISTER start *******/
-section.register {
-    margin: 5% auto;
+main > section.register {
+    background-color: white;
+    border-radius: 5px;
+    margin: 50px auto;
+    max-width: 720px;
+    padding: 20px 0px;
+}
+
+main fieldset {
+    border: none;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 20px 10px;
+}
+
+main fieldset > legend {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+main label.interest {
+    padding: 10px;
+}
+
+main > section.register .form-group {
+    padding-bottom: 20px;
+    width: 300px;
+}
+
+main > section.register input.input-text {
+    padding-top: 10px;
     width: 100%;
 }
+
+main > section.register input.input-date {
+    padding-bottom: 5px;
+    padding-top: 10px;
+    width: 100%;
+}
+
 /******* REGISTER end *******/
 
 
